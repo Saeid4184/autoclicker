@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    باگ رفع‌شده: این صفحه از یک LinearLayout ساده (match_parent + gravity=center،
+    بدون ScrollView) استفاده می‌کرد. وقتی فقط ۴-۵ دکمه بود مشکلی نداشت، ولی حالا
+    که به ۸ دکمه + متن وضعیت رسیده، روی گوشی‌های با صفحه‌ی کوچیک یا با تنظیم
+    "اندازه‌ی فونت/نمایش بزرگ‌تر" (رایج در دسترسی‌پذیری)، این محتوا از ارتفاع
+    صفحه بیشتر می‌شه؛ چون gravity=center محتوا رو وسط می‌چینه (نه از بالا) و
+    هیچ اسکرولی هم در کار نیست، دکمه‌های پایینی (مثلاً «تاریخچه‌ی اجرا») از
+    بالا و پایین صفحه بیرون می‌زدن و کاملاً غیرقابل‌دسترس می‌شدن. حالا همه‌چیز
+    داخل یک ScrollView قرار گرفته.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp"
+            android:text="@string/status_need_overlay" />
+
+        <Button
+            android:id="@+id/btnGrantOverlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/btn_grant_overlay" />
+
+        <Button
+            android:id="@+id/btnGrantAccessibility"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/btn_grant_accessibility" />
+
+        <Button
+            android:id="@+id/btnGrantScreenCapture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="@string/btn_grant_screen_capture" />
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:text="@string/btn_start_overlay" />
+
+        <Button
+            android:id="@+id/btnManageRules"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/btn_manage_rules" />
+
+        <Button
+            android:id="@+id/btnManageScenarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/btn_manage_scenarios" />
+
+        <Button
+            android:id="@+id/btnManageRecordings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/btn_manage_recordings" />
+
+        <Button
+            android:id="@+id/btnViewRunLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:text="@string/btn_view_run_log" />
+
+    </LinearLayout>
+</ScrollView>
