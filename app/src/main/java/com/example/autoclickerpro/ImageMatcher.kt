@@ -8,7 +8,7 @@ import org.opencv.android.Utils
 import org.opencv.core.Core
 import org.opencv.core.CvType
 import org.opencv.core.Mat
-import org.opencv.core.MinMaxLocResult
+import org.opencv.core.Core.MinMaxLocResult
 import org.opencv.imgproc.Imgproc
 
 /**
